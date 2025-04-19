@@ -7,7 +7,6 @@ const config = require("./config.js");
 
 // Inicialização do bot
 const client = new AoiClient(config.Bot);
-const canvas = new AoiCanvas(client);
 
 // Função para carregar todos os arquivos JS em subpastas
 function loadFiles(bot, dirPath) {
