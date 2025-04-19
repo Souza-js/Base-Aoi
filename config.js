@@ -1,1 +1,51 @@
-fsafasf
+module.exports = {
+    Bot: {
+        token: "DISCORD_BOT_TOKEN",
+        prefix: "$getGuildVar[prefix]",
+        events: [
+            "onMessage",
+            "onInteractionCreate",
+            "onJoin",
+            "onMessageDelete",
+            "onMessageUpdate",
+            "onVoiceStateUpdate",
+            "onBanAdd",
+            "onBanRemove",
+            "onFunctionError",
+            "onChannelCreate",
+            "onChannelDelete",
+            "onChannelUpdate",
+        ],
+        intents: [
+            "MessageContent",
+            "Guilds",
+            "GuildMembers",
+            "GuildMessages",
+            "GuildMessageReactions",
+            "MessageContent",
+            "GuildVoiceStates",
+            "GuildBans",
+        ],
+        messageLimit: 1000,
+        messageCacheLifetime: 86400,
+        retryLimit: 3,
+        AoiAutoUpdate: true,
+        aoiLogs: true,
+        respondToBots: false,
+        respondOnEdit: {
+            commands: true,
+            suppressAllErrors: true,
+            errorMessage: "Opss... Minha explosão de fofura causou um acidente.",
+            alwaysExecute: true,
+            repliedUser: false,
+            time: 60000,
+        },
+        database: {
+            type: "aoi.db",
+            db: require("@aoijs/aoi.db"),
+            dbType: "KeyValue",
+            tables: ["main"],
+            securityKey: "a-32-characters-long-string-here",
+        },
+    }
+}
